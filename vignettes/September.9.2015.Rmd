@@ -1,0 +1,145 @@
+---
+title: "09.09.2015 Notes for STAT 330"
+author: "Robert Lee"
+date: "September 9, 2015"
+output: html_document
+---
+
+## September 9th, 2015
+
+Office: SC-K10560
+
+Questions during office hours or after class; responding by email inefficient.
+
+Textbook:  7th Edition; (downloaded)
+
+Grading: Best of 
+```
+     .2 <- a; .3 <- mt; .5 <- FExam
+     .1 <- a; .2 <- mt; .7 <- FExam
+```
+
+FINAL: December 14th 2015
+
+Indepth 270, 285.
+
+Stats sometimes like learning physics more than math.
+
+Same material, higher level each time.
+
+(Math: new topics)
+
+
+
+As low-tech as possible.
+
+Pace a little slower.
+
+Some materials about information.  Information is easy.  About understanding.
+
+# Chapter 1; Probability and Distributions
+
+## Probability theory basics
+
+     General structure of textbook, but not exact order.
+
+> Random experiment:  
+
+Cannot predict outcome with certainty; can still study. 
+
+***
+
+> Useful for this: probability theorem.
+
+Step 1:  Collect all possible outcomes -- the sample space.
+
+Step 2:  Assign numerical numbers to sample space -- probabilities.
+
+***
+
+> Random experiments:  
+
+Those where the outcome cannot be predicted with certainty.  
+
+***
+
+> Sample space (/ outcome space/ $\Omega$):  
+
+The collection of all possible outcomes.  
+
+***
+
+> Events:  
+
+Subsets of the sample space $\Omega$
+
+***
+
+> Definition 1:  
+
+Let P be a real-valued valued function defined on the events of a random experiment with $\Omega$.
+
+     Sigma field -- how you build a sigma field as large as possible to ...
+
+Then P is a probability (set function) if the following conditions hold:  
+
+1. $P(C) \geq 0$ $\forall$ $C \subseteq \Omega$
+2. $P(\Omega) = 1$
+3. If $C_1, C_2, ...$ be a sequence of mutually exclusive events, i.e., $C_i \cap C_j = \emptyset$, $\forall$ $i \neq j$, then
+$P(\displaystyle \bigcup_{i = 1}^{i = \infty}i) = \displaystyle \sum_{i = 1}^{i = \infty} P(C_i)$. (countable additivity)
+
+*****
+The following familiar properties are simple consequences of the above axiomatic definition of the probability.  
+
+> Theorem 1.
+
+1. $P(\emptyset) = 0$
+2. $P(C) = 1 - P(C^c)$
+3. $P(C_1) \leq P(C_2)$ if $C_1 \subseteq C_2$
+4. $0 \leq P(C) \leq 1$
+5. $P(C_1 \cup C_2) = P(C_1) + P(C_2) - P(C_1 \cap C2)$
+6. $P(\displaystyle \bigcup_{i = 1}^{i = \infty} C_i) = \displaystyle \sum_{i = 1}^{i = n} P(C_i)$ (finite additivity) if $C_1, ..., C_n$ are mutually exclusive.
+
+> Proof 
+
+1. Take $C_i = \emptyset$ $\forall$ $i = 1, 2, 3, ...$ . 
+
+From condition (3) in Definition 1, we have 
+
+$P(\emptyset) = \displaystyle \sum_{i = 1}^{i = \infty} P(\emptyset)$, 
+
+which is impossible unless $P(\emptyset) = 0$ by (1).
+
+***
+
+6. Take $C_i = \emptyset$ for $i = n + 1, n + 2, ...$
+
+in condition (3), we obtain (6), because
+
+$P(\emptyset) = 0$.
+
+***
+> Aside:
+
+ $P(C) = 1 - P(C^c)$
+ 
+ $C_1 = C$
+ 
+ $C_2 = C^c$ (in (6))
+ 
+ $n = 2$
+
+***
+> Example 1.
+
+A fair coin is flipped 10 times.
+
+$P($ at least two heads $)$
+
+$= 1 - P($ at most one head $)$
+
+$= 1 - (P($ zero heads $) + P($ exactly 1 heads $))$
+
+$= 1 - (\frac{1}{1024} + \frac{10}{1024})$
+
+$= \frac{1013}{1024}$
