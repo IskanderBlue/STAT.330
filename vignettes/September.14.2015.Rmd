@@ -55,7 +55,7 @@ $P(\displaystyle \bigcup_{i = 1}^{n}) = \displaystyle \sum_{i - 1}^{n} P(A_i) - 
 
 $A_i : T_i$ gets $P_i = 1 - \displaystyle \frac{1}{e}$ for large $n$
 
-# 2. Conditional Probability & Independence
+# Chapter 2; Conditional Probability & Independence
 
 Let A be an event of interest.  
 
@@ -207,7 +207,7 @@ $P(B) = P(B|A_1)P(A_1) + P(B|A_2)P(A_2) = (\frac{100}{101}) \frac{1}{2} + (\frac
 
 $P(A_1|B) = \displaystyle \frac{\frac{100}{101} * \frac{1}{2}}{\frac{1}{2}} = \frac{100}{101}$
 
-### Independence
+## Independence
 
 Two events A and B are said to be independent if 
 
