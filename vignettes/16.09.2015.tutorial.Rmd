@@ -1,0 +1,86 @@
+---
+title: "16.09.2015 Tutorial for STAT 330"
+author: "Robert Lee"
+date: "September 16, 2015"
+output: html_document
+---
+
+> TA
+
+Chenlu Shi
+
+chenlus@sfu.ca
+
+Office Hours:  
+
+13:30 - 14:20, Wed; 
+
+K 10564; 
+
+Don't ask technical quesitons by email.  
+
+> Q 1.3.1
+
+A positive integer from one to six is to be chosen by casting a die. Thus the
+elements $c$ of the sample space $C$ are 1,2,3,4,5,6. Suppose $C_1$ = {1,2,3,4} and
+$C_2$ = {3,4,5,6}. If the probability set function $P$ assigns a probability of $\frac{1}{6}$ to each of the elements of $C$, compute $P(C_1)$, $P(C_2)$, $P(C_1 ∩ C_2 )$, and $P(C_1 ∪ C_2 )$.
+
+A) $P(C_1)$
+
+$P(C1) = 4/6 = 2/3$
+
+B) $P(C_2)$
+
+P(C2) = 4/6 = 2/3
+
+C) $P(C_1 ∩ C_2 )$ 
+
+$(C_1 ∩ C_2)$ = {3,4}
+
+$P(C_1 ∩ C_2 )$ = 2 / 6 = 1 / 3
+
+D) $P(C_1 ∪ C_2 )$ 
+
+$C_1 ∪ C_2$ = {1,2,3,4,5,6}
+$P(C_1 ∪ C_2 ) = P(C) = 1$
+
+> 1.3.5
+
+Let the sample space be $C$ = {c : 0 < c < ∞}. Let C ⊂ $C$ be defined by C = {c : 4 < c < ∞} and take P(C) = $\int_C  e^{−x} dx$. Show that P($C$) = 1. Evaluate P(C), P(C$^c$ ), and P(C ∪ C$^c$).
+
+A) Show that P($C$) = 1
+
+$P(C) = \int_0^\infty f(x)dx = \int_0^\infty e^{-x} dx = -e^{-x} |_0^\infty = -(0 - 1)$ [because $e^{-0} = 1$] $= 1$
+
+B) Find P(C).
+
+P(C) $= \int_4^\infty e^{-x} dx = -e^{-x}|_4^\infty = -(0 - e^{-4}) = e^{-4}$
+ 
+C) Find P(C$^c$)
+
+P(C$^c$) $= 1 - P($C$) = 1 - e^{-4}$ or 
+
+$\int_0^x e^{-x} dx = 1 - e^{-4}$
+
+D) Find P(C ∪ C$^c$).
+
+= P($C$) = 1
+
+> 1.3.10
+
+A bowl contains 16 chips, of which 6 are red, 7 are white, and 3 are blue. If
+four chips are taken at random and without replacement, find the probability that:
+(a) each of the four chips is red; (b) none of the four chips is red; (c) there is at
+least one chip of each color.
+
+A) Each of the four chips is red = event A
+
+$P(A) = \frac{6 \choose 4}{16 \choose 4}$
+
+B) None of the four chips is red = event B
+
+$P(B) = \frac{10 \choose 4}{16 \choose 4}$
+
+C) There is at least one chip of each colour = event C
+
+P(C) = $\displaystyle \frac{{6 \choose 2}{7 \choose 1}{3 \choose 1} + {6 \choose 2}{7 \choose 2}{3 \choose 1} + {6 \choose 1}{7 \choose 1}{3 \choose 2}}{16 \choose 4}$
