@@ -1,0 +1,103 @@
+---
+title: "16.09.2015 Notes for STAT 330"
+author: "Robert Lee"
+date: "September 16, 2015"
+output: html_document
+---
+
+# Chapter 3; Random variables
+
+A random variable is a real-valued function on the sample space $\Omega$.
+
+We write $X(\omega)$, $\omega \in \Omega$, for a random variable, or simply $X$ with $\omega$ suppressed.  
+
+> Examples
+
+1. Roll two dice.  Let $X$ be the sum. 
+2. Flip a coin 11 times.  Let $X$ be the number of heads.  
+3. Let $X$ be the number of tosses required to get the 1st heads. 
+4. Waiting time for a bus.  
+5. The closing price of the TSX tomorrow.
+
+### Cumulative distribution function
+
+One useful tool for studying a random variable is the cumulative distribution function (cdf), defined as
+
+$F(x) = P(X \leq x)$, for any real $x$, 
+
+which has the following properties:  
+
+a) $F(x)$ is non-decreasing, i.e.
+
+     $F(x_1) \leq F(x_2)$ for any $x_1 < x_2$
+
+b) $lim_{x\to-\infty} F(x) = 0$.
+
+c) $lim_{x\to+\infty} F(x) = 1$.
+
+d) $F(x)$ is *right continuous*.
+
+> Example 1 (of *right continuous*)
+
+A fair coin is flipped three times.  Let $X$ be the number of heads.  Obviously, 
+
+$X = 0, 1, 2, 3$ , 
+
+with $P(X = 0) = P(X = 3) = \displaystyle \frac{1}{8}$, $P(X = 1) = P(X = 2) = \displaystyle \frac{3}{8}$.  
+
+> Diagram 1
+
+```{r Diagram 3.1, echo = FALSE}
+cdf <- c(1/8, 1/2, 7/8, 1)
+plot(c(0,1,2,3), cdf, xlim = c(-0.5, 3.5), ylim = c(-0.1, 1.2), xlab = "", ylab = "", yaxt = "n", pch = 16, main = "CDF of the number of heads for coin flipped 3 times")
+axis(2, c(0, 1/8, 1/2, 7/8, 1), c("0", "1/8", "1/2", "7/8", "1"), las = 2)
+lines(c(-8,0), c(0, 0), type = "l")
+lines(c(0,1), c(1/8, 1/8), type = "l")
+lines(c(1,2), c(1/2, 1/2), type = "l")
+lines(c(2,3), c(7/8, 7/8), type = "l")
+lines(c(3,8), c(1, 1), type = "l")
+points(c(0, 1, 2, 3), c(0, 1/8, 1/2, 7/8))
+```
+
+$F(0) = P(X \leq 0) = \displaystyle \frac{1}{8}$
+
+$F(0.5) = P(X \leq 0.5) = \displaystyle \frac{1}{8}$
+
+     I think I'm missing something here.  Please 
+     notify me if your notes show what it is.  
+
+## Discrete random variables
+
+A random variable is discrete if the set of all possible values is finite or countably infinite (read: countable).  
+
+     Countable -- can be put in a sequence.  Eg. The set of all positive integers is coutable -- 1, 2, 3, 4, 5, ...
+     Integers too -- they can be put in a sequence.
+     Rational numbers can be put in a sequence too.  
+     Real numbers cannot.  
+     Poisson distribution, geometric distributions too -- can count the values.
+     
+Such random variable are bests studied using the probability mass function (pmf), defined as $p(x) = P(X = x)$, $x = x_1, x_2, x_3,$..., where $x_1, x_2, x_3$, ... are the possible values of X. 
+
+> Example 1
+
+Let $X$ be the pdf of heads when a fair coins is flipped 11 times.  
+
+Then $X = 1, 2, 3,$...$11$
+
+and $p(x) = P(X = x)) = \displaystyle \frac{11\choose x}{2^{11}}$, $x = 0, 1, 2,$ ...$11$.
+
+> Example 2
+
+5 cards from 52 cards.  Let $X$ be the number of red cards.  
+
+$X = 0,1,2,3,4,5$.
+
+$p(x) = P(X = x) = \displaystyle \frac{{26\choose x}{26 \choose{5-x}}}{52 \choose 5}$, $x = 0, 1, 2, 3, 4, 5$.
+
+> Example 3
+
+Repeatedlly toss a fair coin until a head occurs.  Let $X$ be the number of tosses.  
+
+$X = 1, 2, 3, 4,$...
+
+$p(x) = P(X = x) = \displaystyle \frac{1}{2^x}$, $x = 1, 2, 3, 4,...$
